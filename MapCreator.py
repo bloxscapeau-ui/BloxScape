@@ -30,6 +30,7 @@ for y in range(height):
         color = tuple(pixels[y, x])
         # Get the ID from mapping, default to 0 (empty/unknown)
         tile_id = TILE_MAPPING.get(color, 0)
+        if tile_id == 0: print("No ID was given, may want to check map_layout incase this wasn't on purpose.")
         row.append([tile_id, xAxis, zAxis])
         zAxis += 5
     tile_map.append(row)
